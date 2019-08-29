@@ -1,0 +1,72 @@
+@import 'variables';
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes showMenu {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: none;
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes hideMenu {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(-100%, 0, 0);
+    visibility: none;
+    opacity: 0;
+  }
+}
+
+@keyframes toaster {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { opacity: 0; }
+}
+// Core
+.animated {
+  animation-duration: 600ms;
+  animation-fill-mode: both;
+}
+
+// Delays
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+// Animations
+.toaster {
+  animation-duration: 4000ms;
+  animation-fill-mode: both;
+  animation-name: toaster;
+}
+.fadeIn { animation-name: fadeIn; }
+.fadeOut { animation-name: fadeOut; }
+
+.showMenu { animation-name: showMenu; }

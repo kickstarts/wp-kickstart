@@ -1,0 +1,49 @@
+@charset 'UTF-8';
+
+/*!
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+* Project : WordPress Kickstart
+* Version : 1.0
+*
+* Author  : WordPress Kickstart
+* URL     : http://kickstarts.github.io
+* Contact : support@kickstarts.io
+*
+*
+* Copyright (c) 2019 - WordPress Kickstart
+* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*/
+
+// bootstrap
+@import 'bootstrap/bootstrap';
+
+// Shared
+@import 'shared/variables';
+@import 'shared/mixins';
+@import 'shared/animations';
+@import 'shared/global';
+@import 'shared/fonts';
+@import 'shared/icons';
+@import 'shared/schemes';
+@import 'shared/types';
+@import 'shared/states';
+
+
+// Layout
+@import 'layouts/archives';
+@import 'layouts/comments';
+@import 'layouts/footer';
+@import 'layouts/header';
+@import 'layouts/home';
+@import 'layouts/pages';
+@import 'layouts/sidebar';
+@import 'layouts/single';
+
+// Components
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/navigation';
+@import 'components/pagination';
+
+// Responsive
+@import 'layouts/responsive';

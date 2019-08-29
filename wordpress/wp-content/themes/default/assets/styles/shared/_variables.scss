@@ -1,0 +1,223 @@
+/*
+ * ------------------------------------------------------------------------
+ *
+ * VARIABLES
+ *
+ * ------------------------------------------------------------------------
+ */
+
+/*
+ * ------------------------------------------------------------------------
+ * COLORS
+ * ------------------------------------------------------------------------
+ */
+
+// MAIN COLORS
+$white:    #FFF;
+$black:    #000;
+$gray:     #6C8195;
+$pink:     #FF3F66;
+$purple:   #B535FF;
+$blue:     #326FAB;
+$cyan:     #00B2B2;
+$green:    #97C52C;
+$red:      #BA393D;
+$orange:   #FF9D42;
+$yellow:   #FFBF00;
+
+// VARIANTS (TEMPORATY)
+$gray-alpha:         #B2B2B2;
+$gray-medium:        #666;
+$gray-xmedium:       #A0A0A0;
+$gray-shadow:        #D3D3D3;
+$gray-darker-alpha: hsla(210, 11%, 15%, 0.8) !default;
+$blue-light-af:      lighten($blue, 50%);
+$blue-ultra-light:   lighten($blue, 30%);
+$green-ultra-light:  lighten($green, 30%);
+
+$gray-variations: (
+  gray: $gray,
+  gray-100: lighten(#F8F8F8, 1%),
+  gray-200: #F8F8F8,
+  gray-300: #E9E9E9,
+  gray-400: #95A5A6,
+  gray-500: lighten(#4F5F6E, 5%),
+  gray-600: darken($gray, 15%),
+  gray-700: #343A40,
+  gray-800: darken($gray, 35%),
+  gray-900: darken($gray, 45%)
+);
+
+$blue-variations: (
+  blue: $blue,
+  blue-100: lighten($blue, 45%),
+  blue-200: lighten($blue, 30%),
+  blue-300: lighten($blue, 15%),
+  blue-400: lighten($blue, 5%),
+  blue-500: $blue,
+  blue-600: darken($blue, 15%),
+  blue-700: darken($blue, 25%),
+  blue-800: darken($blue, 35%),
+  blue-900: darken($blue, 45%)
+);
+
+$cyan-variations: (
+  cyan: $cyan,
+  cyan-100: lighten($cyan, 45%),
+  cyan-200: lighten($cyan, 30%),
+  cyan-300: lighten($cyan, 15%),
+  cyan-400: lighten($cyan, 5%),
+  cyan-500: $cyan,
+  cyan-600: darken($cyan, 15%),
+  cyan-700: darken($cyan, 25%),
+  cyan-800: darken($cyan, 35%),
+  cyan-900: darken($cyan, 45%)
+);
+
+$green-variations: (
+  green: $green,
+  green-100: #DAE3C3,
+  green-200: lighten($green, 30%),
+  green-300: lighten($green, 15%),
+  green-400: lighten($green, 5%),
+  green-500: $green,
+  green-600: darken($green, 15%),
+  green-700: darken($green, 25%),
+  green-800: darken($green, 35%),
+  green-900: darken($green, 45%)
+);
+
+$red-variations: (
+  red: $red,
+  red-100: #EFB0B2,
+  red-200: lighten($red, 30%),
+  red-300: lighten($red, 15%),
+  red-400: lighten($red, 5%),
+  red-500: $red,
+  red-600: darken($red, 15%),
+  red-700: darken($red, 25%),
+  red-800: darken($red, 35%),
+  red-900: darken($red, 45%)
+);
+
+$orange-variations: (
+  orange: $orange,
+  orange-100: lighten($orange, 45%),
+  orange-200: lighten($orange, 30%),
+  orange-300: lighten($orange, 15%),
+  orange-400: lighten($orange, 5%),
+  orange-500: $orange,
+  orange-600: darken($orange, 15%),
+  orange-700: darken($orange, 25%),
+  orange-800: darken($orange, 35%),
+  orange-900: darken($orange, 45%)
+);
+
+$yellow-variations: (
+  yellow: $yellow,
+  yellow-100: lighten($yellow, 45%),
+  yellow-200: lighten($yellow, 30%),
+  yellow-300: lighten($yellow, 15%),
+  yellow-400: lighten($yellow, 5%),
+  yellow-500: $yellow,
+  yellow-600: darken($yellow, 15%),
+  yellow-700: darken($yellow, 25%),
+  yellow-800: darken($yellow, 35%),
+  yellow-900: darken($yellow, 45%)
+);
+
+// MAIN
+$border-color-input: #E8E9EC;
+$select-color:       #DEDEDE;
+$main-text:          map-get($gray-variations, 'gray-700');
+$link-hover:         rgba(map-get($gray-variations, 'gray-200'), 0.5);
+
+// ALPHAS
+$gray-alpha: rgba(map-get($gray-variations, 'gray-100'), .75);
+$blue-alpha: rgba(map-get($blue-variations, 'blue-100'), .45);
+$cyan-alpha: rgba(map-get($cyan-variations, 'cyan-100'), .45);
+$green-alpha: rgba(map-get($green-variations, 'green-100'), .45);
+$red-alpha: rgba(map-get($red-variations, 'red-100'), .45);
+$orange-alpha: rgba(map-get($orange-variations, 'orange-100'), .45);
+$yellow-alpha: rgba(map-get($yellow-variations, 'yellow-100'), .45);
+
+/*
+ * ------------------------------------------------------------------------
+ * FONTS
+ * ------------------------------------------------------------------------
+ */
+
+$font-family-montserrat: 'Montserrat', sans-serif;
+
+$font-size-smallest: 9px;
+$font-size-smaller:  10px;
+$font-size-small:    11px;
+$font-size-medium:   12px;
+$font-size-xmedium:  14px;
+$font-size-large:    16px;
+$font-size-larger:   18px;
+$font-size-largest:  30px;
+$font-size-big:      36px;
+$font-size-biger:    42px;
+
+$font-weight-regular: 400;
+$font-weight-semi:    500;
+$font-weight-bold:    700;
+
+$font-size-base: $font-size-small;
+$line-height-base: normal;
+
+/*
+ * ------------------------------------------------------------------------
+ * COMPONENTS
+ * ------------------------------------------------------------------------
+ */
+
+$border-radius-base: 3px;
+$border-radius-large: 8px;
+$border-rounded: 50%;
+
+/*
+ * ------------------------------------------------------------------------
+ * ANIMATIONS
+ * ------------------------------------------------------------------------
+ */
+
+$ease-in-quad:      cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$ease-in-cubic:     cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-in-quart:     cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$ease-in-quint:     cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$ease-in-sine:      cubic-bezier(0.47, 0, 0.745, 0.715);
+$ease-in-expo:      cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$ease-in-circ:      cubic-bezier(0.6, 0.04, 0.98, 0.335);
+$ease-in-back:      cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+$ease-out-quad:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$ease-out-cubic:    cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-out-quart:    cubic-bezier(0.165, 0.84, 0.44, 1);
+$ease-out-quint:    cubic-bezier(0.23, 1, 0.32, 1);
+$ease-out-sine:     cubic-bezier(0.39, 0.575, 0.565, 1);
+$ease-out-expo:     cubic-bezier(0.19, 1, 0.22, 1);
+$ease-out-circ:     cubic-bezier(0.075, 0.82, 0.165, 1);
+$ease-out-back:     cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+$ease-in-out-quad:  cubic-bezier(0.455, 0.03, 0.515, 0.95);
+$ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+$ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+$ease-in-out-sine:  cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$ease-in-out-expo:  cubic-bezier(0, 0, 0, 1);
+$ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$ease-in-out-back:  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+/*
+ * ------------------------------------------------------------------------
+ * ICONS
+ * ------------------------------------------------------------------------
+ */
+
+$icon-size-lg: 20px;
+$icon-size: 16px;
+$icon-size-md: 15px;
+$icon-size-sm: 10px;
+$icon-path: '/assets/img/icons';

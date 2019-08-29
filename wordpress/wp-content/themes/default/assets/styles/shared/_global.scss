@@ -1,0 +1,96 @@
+/*
+ * ------------------------------------------------------------------------
+ *
+ * GLOBAL HELPERS
+ *
+ * ------------------------------------------------------------------------
+ */
+
+.push-top-small { margin-top: 5px !important; }
+.push-right-small { margin-right: 5px !important; }
+.push-bottom-small { margin-bottom: 5px !important; }
+.push-left-small { margin-left: 5px !important; }
+.push-top { margin-top: 15px !important; }
+.push-right { margin-right: 15px !important; }
+.push-bottom { margin-bottom: 15px !important; }
+.push-left { margin-left: 15px !important; }
+.push-top-double { margin-top: 30px !important; }
+.push-right-double { margin-right: 30px !important; }
+.push-bottom-double { margin-bottom: 30px !important; }
+.push-left-double { margin-left: 30px !important; }
+
+.no-border { border: none; }
+.no-pad { padding-left: 0; padding-right: 0; }
+.no-pad-left { padding-left: 0 !important; }
+.no-pad-bottom { padding-bottom: 0 !important; }
+
+
+/*
+ * ------------------------------------------------------------------------
+ *
+ * RESPONSIVE HELPERS
+ *
+ * ------------------------------------------------------------------------
+ */
+
+// MOBILE
+@media only screen and (max-width: 991px) {
+  .desktop { display: none !important; }
+  .mobile { display: block; }
+
+  // RESPONSIVE TABLE
+  .table-thead { display: none; }
+
+  .table-row {
+    display: flex;
+    flex-direction: column;
+    height: fit-content !important;
+    border-bottom: 1px $border-color-input solid;
+  }
+
+  .table-cell {
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+
+    &::before {
+      content: attr(data-label);
+      justify-content: flex-start;
+      text-transform: uppercase;
+      font-weight: $font-weight-bold;
+      min-width: 50%;
+      width: -o-available;
+      width: -ms-available;
+      width: -moz-available;
+      width: -webkit-available;
+    }
+
+    &.table-link,
+    &.table-status-dot,
+    &.table-actions {
+      margin-left: auto;
+    }
+  }
+
+  .table-actions { opacity: 1; }
+
+  .table-link {
+    width: -moz-available;
+    width: -webkit-fill-available;
+  }
+}
+
+// DESKTOP
+@media only screen and (min-width: 991px) {
+  .desktop { display: block; }
+  .mobile { display: none !important; }
+  .hidden-lg { display: none; }
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding-left: 0;
+  }
+
+  .hidden-sm { display: none; }
+}

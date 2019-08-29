@@ -1,0 +1,39 @@
+body { font-family: $font-family-montserrat; }
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.text-small {
+  color: map-get($gray-variations, 'gray-700');
+  font-size: $font-size-small;
+}
+
+.lead-title {
+  align-self: flex-start;
+  text-transform: uppercase;
+  font-size: $font-size-large;
+  font-weight: $font-weight-bold;
+  color: $blue;
+}
+
+.main-title {
+  align-self: flex-start;
+  text-transform: uppercase;
+  font-size: $font-size-medium;
+  font-weight: $font-weight-bold;
+  color: $blue;
+}
+
+.sub-title {
+  align-self: flex-start;
+  text-transform: uppercase;
+  font-size: $font-size-small;
+  color: map-get($gray-variations, 'gray-400');
+}
+
+.link { color: $blue; }
+
+.text-blue { color: $blue !important; }
+.text-red { color: $red !important; }
+.text-green { color: $green !important; }

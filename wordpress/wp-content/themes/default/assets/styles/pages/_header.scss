@@ -1,0 +1,90 @@
+header {
+  display: block;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $blue-md-lighter;
+  // border-bottom: 2px solid transparent;
+
+  img, a {
+    -webkit-transition: 0.4s;
+       -moz-transition: 0.4s;
+        -ms-transition: 0.4s;
+         -o-transition: 0.4s;
+            transition: 0.4s;
+  }
+
+  &.borded-header {
+    border-bottom: 2px solid $red;
+  }
+
+  &.scrolled-header {
+    border-bottom: 2px solid $red;
+
+    .logo img {
+      width: 50px;
+    }
+    .nav-item {
+      
+      a {
+        padding: 17px 0;
+      }
+
+      .menu-subtitle {
+        display: none;
+      }
+    }
+  }
+}
+
+.inner-top {
+  position: relative;
+  background-color: $blue-md-lighter;
+  background-image: url(../images/images/barra-salvador.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0;
+
+  .bg-outer {
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background: url(../images/images/bars.png) top left repeat-x $blue-md-lighter;
+    opacity: .85;
+  }
+
+  .top-text-wrapper {
+    position: relative;
+    z-index: 100
+  }
+}
+
+.breadcrumb {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    color: $white;
+
+    a {
+      color: $blue-light;
+
+      &:after {
+        margin: 0 10px;
+        content: "-";
+        color: $white;
+      }
+
+      &:hover {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+  }
+}

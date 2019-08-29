@@ -1,0 +1,137 @@
+/*
+ * ------------------------------------------------------------------------
+ *
+ * MIXINS
+ *
+ * ------------------------------------------------------------------------
+ */
+
+@import 'icons';
+@import 'variables';
+
+// Centered Content
+@mixin centerer($horizontal: true, $vertical: true) {
+  position: absolute;
+
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+// Aspect Ratio
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+// Calc
+@mixin calc($property, $value) {
+  #{$property}: -webkit-calc(#{$value});
+  #{$property}: calc(#{$value});
+}
+
+// Image Render
+@mixin image-rendering($mode:auto) {
+  @if ($mode == crisp-edges) {
+    -ms-interpolation-mode: nearest-neighbor; // IE8+
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  @else {
+    image-rendering: $mode;
+  }
+}
+
+// Size
+@mixin size($width, $height: $width) {
+  width: unquote($width + 'px');
+  height: unquote($height + 'px');
+}
+
+// Variants
+@mixin gradient($mode) {
+  background: $blue;
+
+  @if ($mode == 'horizontal') {
+    background: -webkit-linear-gradient(left, $blue 0%, $cyan 100%);
+    background: -moz-linear-gradient(left, $blue 0%, $cyan 100%);
+    background: linear-gradient(to right, $blue 0%, $cyan 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$blue', endColorstr='$cyan', GradientType=1);
+  }
+
+  @if ($mode == 'vertical') {
+    background: -webkit-linear-gradient(top, $blue 0%, $cyan 100%);
+    background: -moz-linear-gradient(top, $blue 0%, $cyan 100%);
+    background: linear-gradient(to bottom, $blue 0%, $cyan 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$blue', endColorstr='$cyan', GradientType=0);
+  }
+
+  @if ($mode == 'diagonal') {
+    background: -webkit-linear-gradient(-45deg, $blue 0%, $cyan 100%);
+    background: -moz-linear-gradient(-45deg, $blue 0%, $cyan 100%);
+    background: linear-gradient(135deg, $blue 0%, $cyan 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$blue', endColorstr='$cyan', GradientType=1);
+  }
+}
+
+@mixin font($family, $size, $weight, $color) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin change-width ($from , $to, $timing, $trasition) {
+  @keyframes change-width {
+    0% { width: $from; }
+    100% { width: $to; }
+  }
+
+  animation: change-width;
+  animation-timing-function: $timing;
+  animation-duration: $trasition;
+}
+
+@mixin animator($target: all, $type: ease-in-out, $velocity: 200ms) {
+  -webkit-transition: $target $type $velocity;
+  -moz-transition: $target $type $velocity;
+  -ms-transition: $target $type $velocity;
+  -o-transition: $target $type $velocity;
+  transition: $target $type $velocity;
+}
+
+@mixin color-schemes($variations, $attr-count: 9, $step: 100) {
+  @each $class, $color in $variations {
+    .bg-#{$class} { background-color: $color !important; }
+    .fg-#{$class} { color: $color !important; }
+  }
+}

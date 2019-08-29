@@ -1,0 +1,104 @@
+.single {
+  i {
+    &.fa-facebook-f {
+      font-size: 15px;
+      padding: 5.5px 9.5px;
+      background-color: $facebook;
+    }
+    &.fa-twitter {
+      font-size: 15px;
+      padding: 5.5px 5.5px;
+      background-color: $twitter;
+    }
+    &.fa-whatsapp {
+      font-size: 15px;
+      padding: 5.5px 6.5px;
+      background-color: $whatsapp;
+    }
+  }
+
+  hr {
+    &.search {
+      float: left;
+      width: 100px;
+      border-color: $blue-light;
+    }
+  }
+
+  .input {
+    border-color: $gray-lighter;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-right: none;
+
+    &::-webkit-input-placeholder {
+      color: $gray-darker;
+      font-size: $text-sm;
+    }
+    &::-moz-placeholder {
+      color: $gray-darker;
+      font-size: $text-sm;
+    }
+    &::-ms-input-placeholder {
+      color: $gray-darker;
+      font-size: $text-sm;
+    }
+    &::placeholder {
+      color: $gray-darker;
+      font-size: $text-sm;
+    }
+  }
+
+  .wp-caption {
+    width: 100% !important;
+    height: auto;
+
+    img {
+      height: auto;
+    }
+  }
+
+  img:not(.social-icon) {
+    height: auto;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.agenda-main-content {
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.startup {
+
+  &-main-content {
+    margin-top: 45px;
+  }
+
+  &-description {
+    margin-bottom: 45px;
+  }
+}
+
+.acesse-site {
+  border: 1px solid $blue-md-lighter;
+  margin-bottom: 50px;
+
+  &:hover {
+    background: transparent;
+    color: $blue-md-lighter;
+  }
+}
+
+.form-vaga {
+
+  h2,
+  p {
+    line-height: 1;
+  }
+}

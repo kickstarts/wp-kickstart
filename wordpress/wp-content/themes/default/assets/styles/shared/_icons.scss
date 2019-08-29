@@ -1,0 +1,263 @@
+@import 'variables';
+
+// MIXINS
+@mixin mask($icon, $bg: $blue) {
+  mask: url($icon-path + '/icon-' + $icon + '.svg') no-repeat center;
+  -webkit-mask: url($icon-path + '/icon-' + $icon + '.svg') no-repeat center;
+  -moz-mask: url($icon-path + '/icon-' + $icon + '.svg') no-repeat center;
+  background-color: $bg;
+}
+
+// ICON SET
+.icon {
+  width: $icon-size;
+  height: $icon-size;
+  margin: 0;
+  mask-size: contain !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  -webkit-mask-size: contain !important;
+  -webkit-mask-position: center !important;
+  -webkit-mask-repeat: no-repeat !important;
+  -moz-mask-size: contain !important;
+  -moz-mask-repeat: no-repeat !important;
+  -moz-mask-position: center !important;
+}
+
+.icon-inline {
+  display: inline-flex;
+  padding-bottom: 3px;
+  margin-left: -16px;
+  padding-right: 21px;
+}
+
+@-moz-document url-prefix() {
+  .icon-inline {
+    padding-bottom: 0;
+  }
+}
+
+.modal-toggle-icon-inline {
+  display: inline-flex;
+}
+
+.icon-generic { @include mask('add'); }
+
+.icon-add { @include mask('add'); }
+.icon-back { @include mask('back'); }
+.icon-badge { @include mask('badge'); }
+.icon-bars-surface { @include mask('bars-surface'); }
+.icon-budgetin { @include mask('budgetin'); }
+.icon-budgetout { @include mask('budgetout'); }
+.icon-calendar { @include mask('calendar'); }
+.icon-caution { @include mask('caution'); }
+.icon-check { @include mask('check'); }
+.icon-check-thin { @include mask('check-thin'); }
+.icon-checkbox { @include mask('checkbox'); }
+.icon-checklist { @include mask('checklist'); }
+.icon-class-board { @include mask('class-board'); }
+.icon-classroom { @include mask('classroom'); }
+.icon-content { @include mask('content'); }
+.icon-control-panel { @include mask('control-panel'); }
+.icon-cycle { @include mask('cycle'); }
+.icon-dashboard { @include mask('dashboard'); }
+.icon-disciplines { @include mask('disciplines'); }
+.icon-enrollment { @include mask('enrollment-3'); }
+.icon-explain { @include mask('explain'); }
+.icon-export { @include mask('export'); }
+.icon-family { @include mask('family'); }
+.icon-frequence { @include mask('frequence'); }
+.icon-gear { @include mask('gear'); }
+.icon-general-info { @include mask('general-info'); }
+.icon-grades { @include mask('grades'); }
+.icon-hours { @include mask('hours'); }
+.icon-lamp { @include mask('lamp'); }
+.icon-letive-cycle { @include mask('letive-cycle'); }
+.icon-open-book { @include mask('open-book'); }
+.icon-presentation { @include mask('presentation'); }
+.icon-print { @include mask('print', $blue); }
+.icon-pdf { @include mask('pdf'); }
+.icon-previous { @include mask('arrow-left'); }
+.icon-reload { @include mask('reload'); }
+.icon-schedule { @include mask('schedule'); }
+.icon-select { @include mask('select'); }
+.icon-search { @include mask('search'); }
+.icon-upload { @include mask('upload'); }
+.icon-next { @include mask('arrow-left'); transform: rotate(-180deg); }
+
+// Tabs - Alunos
+.icon-leaving { @include mask('leaving'); }
+.icon-legal-responsable { @include mask('legal-responsable'); }
+.icon-medic { @include mask('medic'); }
+.icon-occurence { @include mask('occurence'); }
+.icon-person { @include mask('person'); }
+.icon-school { @include mask('school'); }
+.icon-send-bill { @include mask('send-bill'); }
+
+// Tabs - Disciplinas
+.icon-info { @include mask('info'); }
+.icon-goals { @include mask('goals'); }
+
+// Tabs - Responsáveis
+.icon-children { @include mask('children'); }
+.icon-frequence { @include mask('frequence'); }
+.icon-disciplines { @include mask('disciplines'); }
+.icon-hours { @include mask('hours'); }
+.icon-general-info { @include mask('general-info'); }
+.icon-trashcan { @include mask('trashcan') }
+
+.icon-students,
+.icon-reading { @include mask('students'); }
+
+.icon-view { @include mask('eye', $gray); }
+.icon-edit { @include mask('edit', $gray); }
+.icon-delete { @include mask('delete', $gray); }
+
+// VARIANTS
+.icon-tabs {
+  background-color: $gray-alpha;
+  width: $icon-size-md;
+  height: $icon-size-md;
+}
+
+.icon-view,
+.icon-edit,
+.icon-delete {
+  &:hover {
+    background-color: $blue;
+  }
+}
+
+.icon-financial,
+.icon-money {
+  @include mask('money-3');
+
+  width: $icon-size-lg;
+  height: $icon-size-lg;
+}
+
+.icon-arrow-right {
+  @include mask('arrow-right', $blue);
+
+  position: absolute;
+  top: 23px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+}
+
+.icon-bell {
+  @include mask('bell', $white);
+
+  position: relative;
+  z-index: -1;
+  left: 10px;
+  width: 26px;
+  height: 26px;
+}
+
+.icon-sapiens {
+  @include mask('brain', map-get($gray-variations, 'gray-400'));
+  opacity: 0.15;
+}
+
+.icon-menu {
+  border-bottom: 1px solid $white;
+  border-top: 1px solid $white;
+  display: block;
+  height: 14px;
+  position: relative;
+  width: 24px;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    background-color: $white;
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 5px;
+    width: 24px;
+  }
+}
+
+.icon-back {
+  width: $icon-size;
+  height: $icon-size;
+}
+
+.icon-close {
+  display: block;
+  position: relative;
+  height: $icon-size;
+  width: $icon-size;
+
+  &::before {
+    content: '';
+    background-color: $white;
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 7px;
+    width: 18px;
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    content: '';
+    background-color: $white;
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 7px;
+    width: 18px;
+    transform: rotate(45deg);
+  }
+}
+
+// SIDES
+.icon-left-side {
+  width: $icon-size;
+  height: $icon-size;
+  margin-right: 10px;
+}
+
+.icon-right-side {
+  width: $icon-size;
+  height: $icon-size;
+  margin-left: 10px;
+}
+
+// SIZES
+.icon-2x {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-3x {
+  width: 64px;
+  height: 64px;
+}
+
+.icon-4x {
+  width: 128px;
+  height: 128px;
+}
+
+.icon-sm {
+  width: $icon-size / 2 ;
+  height: $icon-size / 2 ;
+}
+
+// COLORS
+.icon-cyan { background-color: $cyan !important; }
+.icon-blue { background-color: $blue !important; }
+.icon-green { background-color: $green !important; }
+.icon-red { background-color: $red !important; }
+.icon-orange { background-color: $orange !important; }
+.icon-white { background-color: $white !important; }
+.icon-gray { background-color: $gray !important; }
+.icon-black { background-color: $black !important; }

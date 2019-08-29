@@ -1,0 +1,75 @@
+.commentlist {
+  background: $gray-md-light;
+  padding: 25px;
+}
+
+.forum-comments {
+  margin-top: 70px;
+
+  .vcard {
+    margin-bottom: 20px;
+
+    a {
+      color: $blue-light;
+      text-transform: uppercase;
+      font-size: $text-sm;
+    }
+  }
+
+  .depth-2 {
+    margin-left: 65px;
+  }
+}
+
+.forum-comment-title {
+  margin: 30px 0;
+}
+
+.forum-respond {
+  margin: 0 0 50px 0;
+
+  form {
+    background: $gray-md-light;
+    padding: 10px 25px 25px;
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+  }
+
+  input[type=text],
+  textarea {
+    width: 100%;
+  }
+
+  input[type=text] {
+    padding: 0px;
+    border: 1px solid $gray-lighter;
+    border-radius: 2px;
+  }
+
+  input[type="submit"] {
+    border: 1px solid $blue-light;
+    padding-left: 45px;
+    padding-right: 45px;
+    margin-top: 15px;
+
+    &:hover {
+      background: transparent;
+      color: $blue-light;
+    }
+  }
+
+  textarea {
+    border: 1px solid $gray-lighter;
+    border-radius: 2px;
+  }
+}
+
+.user-identification {
+
+  a {
+    color: $blue-light;
+  }
+}

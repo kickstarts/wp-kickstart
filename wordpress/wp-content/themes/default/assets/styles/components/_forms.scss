@@ -1,0 +1,440 @@
+label {
+  @include text($font-size-base, $black, 'bold');
+  margin: 15px 0 5px;
+}
+
+.obrigatorio {
+  color: $red;
+  display: initial;
+  font-size: $text-md;
+}
+
+.form-control {
+  border-radius: 0;
+  border: 1px solid $black;
+}
+
+input::placeholder {
+  color: $gray-darker !important;
+  opacity: 1;
+}
+
+input:-ms-input-placeholder {
+  color: $gray-darker !important;
+}
+
+input::-ms-input-placeholder {
+  color: $gray-darker !important;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+select,
+textarea {
+  color: $blue-md-lighter !important;
+  padding: 10px 15px;
+  background-repeat: no-repeat;
+  background-color: $white !important;
+  border-color: $gray-medium !important;
+
+  &:focus {
+    -webkit-outline: none !important;
+            outline: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+  }
+}
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url(../images/icons/ico-select.svg);
+  background-position: calc(100% - 15px) center;
+}
+
+.btn {
+
+  &:focus {
+    box-shadow: unset;
+  }
+
+  &-submit {
+    width: 100%;
+    margin-top: 15px;
+    border: 1px solid $blue-md-lighter;
+
+    &:hover {
+      background-color: $white;
+      color: $blue-md-lighter;
+    }
+  }
+
+  &-candidatese {
+    margin: 15px 0;
+    border: 1px solid $blue-light;
+
+    &:hover {
+      background-color: $white;
+      color: $blue-light;
+    }
+  }
+
+  &-file {
+    margin-top: 0;
+    background: $gray-darkest;
+    border: 1px solid $gray-darkest;
+    color: $white;
+
+    &:hover {
+      background: transparent;
+      color: $gray-darkest;
+    }
+  }
+}
+
+.custom-file-label::after {
+  content: 'Buscar'
+}
+
+.wpcf7-response-output {
+  @include text($font-size-base * 1.5, $white, 'bold');
+  text-align: center;
+  position: fixed;
+  z-index: 990;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  margin: 0 !important;
+  padding: 20px !important;
+  border: none !important;
+}
+
+.wpcf7-not-valid-tip {
+  display: none !important;
+  visibility: none !important;
+}
+
+.wpcf7-not-valid { border: 1px solid $red; }
+.wpcf7-validation-errors { background-color: $red !important; }
+.wpcf7-mail-sent-ok { background-color: $green !important; }
+
+.ajax-loader { margin: 15px 15px 0 !important; }
+
+
+.multi-step-form-wrapper {
+  padding-bottom: 50px;
+}
+.form {
+
+  &-control {
+
+    &.invalid {
+      border-color: $red !important;
+    }
+  }
+
+  &-steps {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px 15px;
+  }
+  &-step {
+    text-align: center;
+    margin: 0 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      height: 40px;
+      width: 40px;
+      color: $blue-light;
+      background-color: $gray-md-light;
+      border-radius: 50%;
+      border: 1px solid $blue-light;
+
+      &-1 {
+        &:before {
+          content: "1";
+        }
+      }
+      &-2 {
+        &:before {
+          content: "2";
+        }
+      }
+      &-3 {
+        &:before {
+          content: "3";
+        }
+      }
+      &-4 {
+        &:before {
+          content: "4";
+        }
+      }
+      &-5 {
+        &:before {
+          content: "5";
+        }
+      }
+    }
+
+    &-text {
+      margin-top: 5px;
+      font-size: 12px;
+    }
+
+    &.active {
+
+      .form-step-number {
+        background-color: $gray-medium;
+      }
+    }
+
+
+    &.finish {
+
+      .form-step-number {
+        background-image: url(../images/icons/ico-check.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: $blue-light;
+
+        &:before {
+          content: "";
+        }
+      }
+    }
+  }
+
+  &-tab {
+    display: none;
+
+    &-title {
+      margin-bottom: 45px;
+    }
+    &-content {
+
+    }
+  }
+
+  &-card {
+    cursor: pointer;
+    border: 1px solid $gray-medium;
+    margin: 20px;
+    padding: 25px 15px 15px;
+    max-width: 20%;
+
+    p,
+    h3 {
+      margin-top: 10px;
+    }
+
+    &:hover,
+    &.fase-active {
+      background-color: $blue-light;
+
+      img {
+        -webkit-filter: grayscale(100%) brightness(2);
+                filter: grayscale(100%) brightness(2);
+      }
+
+      p,
+      h3 {
+        color: $white;
+      }
+    }
+
+    &.invalid {
+      border-color: $red;
+    }
+  }
+}
+.form-check {
+  padding: 0;
+  margin: 15px 0;
+
+  &-input {
+    opacity: 0;
+  }
+
+  &-input + &-label::after {
+    content: none;
+  }
+  &-input:checked + &-label::after {
+    content: "";
+  }
+
+  &-label {
+    font-weight: 400;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    padding-left: 22px;
+
+    &::before,
+    &::after {
+      background: $white;
+      position: absolute;
+      content: "";
+      display: inline-block;
+    }
+    &::before {
+      color: $gray-medium;
+      height: 16px;
+      width: 16px;
+      border: 1px solid;
+      left: 0px;
+      top: 3px;
+    }
+    &::after {
+      color: $blue-light;
+      height: 5px;
+      width: 9px;
+      border-left: 2px solid;
+      border-bottom: 2px solid;
+      transform: rotate(-45deg);
+      left: 4px;
+      top: 7px;
+    }
+
+    a {
+
+      &:hover {
+        color: $blue-light;
+      }
+    }
+  }
+}
+
+.input {
+
+  &-group {
+
+    input {
+      border-left: none;
+    }
+
+    &-text {
+      border: none;
+      background: $gray-medium;
+    }
+  }
+}
+
+button {
+
+  &:disabled {
+    cursor: not-allowed;
+    background: $gray-darker;
+    border-color: $gray-darker !important;
+
+    &:hover {
+      background-color: $gray-darker;
+      border-color: $gray-darker !important;
+      color: $white !important;
+    }
+  }
+}
+
+#startup_map {
+  height: 500px;
+}
+
+.login-form-wrapper {
+  position: relative;
+  margin: 100px 0 150px;
+  padding: 65px 15px 25px;
+
+  label {
+    display: block;
+    width: 100%;
+    color: $blue-md-lighter;
+    font-size: 12px;
+  }
+
+  input[type="submit"] {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    background: $blue-light;
+    color: $white;
+    border: 1px solid $blue-light;
+    font-size: 14px;
+    text-align: center;
+    margin: 25px 0 0;
+    padding: 10px 0;
+    font-weight: bold;
+    -webkit-transition: 0.3s;
+       -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+         -o-transition: 0.3s;
+            transition: 0.3s;
+
+    &:hover {
+      background: transparent;
+      color: $blue-light;
+    }
+  }
+}
+
+.login-error-alert {
+  margin-top: 15px;
+}
+
+/////////////////////
+// TABS
+/////////////////////
+.minha-conta {
+
+  &-list {
+    list-style-type: none;
+    padding: 30px 0 0;
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+  }
+}
+.tablinks {
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  outline: unset;
+  border: none;
+  border-bottom: 1px solid $gray-medium;
+  background-color: $gray-md-light;
+  width: 100%;
+  text-align: left;
+
+  &:hover,
+  &.active {
+    color: $blue-light;
+  }
+}
+.tab {
+  overflow: hidden;
+}
+
+.tabcontent {
+  display: none;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+  padding-right: 30px;
+  animation: fadeEffect 1s;
+}
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

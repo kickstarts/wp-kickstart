@@ -1,0 +1,64 @@
+.pre-footer {
+  padding: 30px 0 40px;
+  background-image: url(../images/icons/ico-all-saints-bay-white.svg);
+  background-position: -150px center;
+  background-repeat: no-repeat;
+  background-size: 350px auto;
+}
+
+.footer {
+  padding: 15px 0 50px 0;
+
+  .about {
+
+    a:hover {
+      color: $red;
+      text-decoration: none;
+    }
+  }
+
+  h3 {
+    margin-top: 30px;
+  }
+}
+
+.borded-footer-link {
+  border-bottom: 1px solid $blue-md-darker;
+
+  &:hover {
+    text-decoration: none;
+    color: $blue-light;
+  }
+}
+.home-forum-item {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+
+.newsletter {
+
+  input {
+    width: 100%;
+    margin-bottom: 5px;
+
+    &[type="text"] {
+      font-size: 14px;
+      margin-top: 15px;
+      padding: 10px 12px;
+      height: auto;
+    }
+
+    &[type="submit"] {
+      border: 1px solid $blue-light;
+
+      &:hover {
+        background: transparent;
+        color: $blue-light;
+      }
+    }
+  }
+}
+
+.copyright {
+  padding: 15px 0;
+}

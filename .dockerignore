@@ -1,0 +1,13 @@
+.git
+.gitignore
+.sass-cache
+.vscode
+.DS_Store
+.wp-cli
+.mysql_history
+.idea
+
+node_modules
+
+*.zip
+*.sql

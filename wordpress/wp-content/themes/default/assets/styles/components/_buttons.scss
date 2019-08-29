@@ -1,0 +1,54 @@
+.btn {
+  padding: 8px 20px;
+  border-radius: 0;
+}
+
+.btn-cadastre-se {
+  border: 1px solid $blue-md-lighter;
+
+  &:hover {
+    color: $blue-md-lighter;
+    background-color: $blue-light;
+  }
+}
+
+.wpcf7-submit {
+  @extend .btn;
+  background-color: $green;
+  border-radius: 0;
+  color: $white;
+  padding: 8px 20px;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: $black;
+  }
+}
+
+.btn-search {
+  @extend .btn;
+  background-color: $blue;
+  margin: 0;
+  border-radius: 0;
+  color: $white;
+  padding: 13px 25px;
+
+  &:hover {
+    background-color: $black;
+  }
+}
+
+.btn-close {
+  @extend .btn;
+  background-color: $red;
+  border-radius: 0;
+  color: $white;
+  padding: 5px;
+  display: block;
+  width: 100%;
+  text-align: left;
+
+  &:hover {
+    background-color: $black;
+  }
+}

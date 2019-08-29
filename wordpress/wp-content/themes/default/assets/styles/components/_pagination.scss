@@ -1,0 +1,35 @@
+.pagination {
+  margin-top: 90px;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+
+  .page-item {
+
+    .page-link {
+      color: $blue-md-lighter;
+      border: 1px solid $gray-lighter !important;
+
+      &:hover,
+      &.current {
+        background-color: $blue-light;
+        color: $white;
+        text-decoration: none;
+      }
+
+      &:focus {
+        -webkit-box-shadow: none;
+                box-shadow: none;
+      }
+    }
+
+    &.active {
+
+      .page-link {
+        background-color: $blue-light;
+        color: $white;
+        border-color: $gray-lighter;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@include color-schemes($gray-variations);
+@include color-schemes($blue-variations);
+@include color-schemes($cyan-variations);
+@include color-schemes($green-variations);
+@include color-schemes($red-variations);
+@include color-schemes($orange-variations);
+@include color-schemes($yellow-variations);
+
+.fg-white { color: $white !important; }
+.fg-black { color: $black !important; }
+
+.bg-pink { background-color: $pink; }
+.bg-purple { background-color: $purple; }
+
+.bg-gray-alpha { background-color: $gray-alpha; }
+.bg-blue-alpha { background-color: $blue-alpha; }
+.bg-cyan-alpha { background-color: $cyan-alpha; }
+.bg-green-alpha { background-color: $green-alpha; }
+.bg-red-alpha { background-color: $red-alpha; }
+.bg-orange-alpha { background-color: $orange-alpha; }
+.bg-yellow-alpha { background-color: $yellow-alpha; }
+
+.gradient-h { @include gradient('horizontal'); }
+.gradient-v { @include gradient('vertical'); }
+.gradient-d { @include gradient('diagonal'); }

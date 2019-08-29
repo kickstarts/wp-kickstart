@@ -1,0 +1,39 @@
+*:focus { outline: 0 !important; }
+
+.status {
+  padding: 5px 15px;
+  text-align: center;
+  border-radius: 12px;
+  color: map-get($gray-variations , 'gray-500');
+  font-size: $font-size-smallest;
+
+  &.is-complete,
+  &.is-positive {
+    background-color: rgba(map-get($green-variations , 'green-300'), 0.35);
+  }
+
+  &.is-incomplete,
+  &.is-negative {
+    background-color: rgba(map-get($red-variations , 'red-300'), 0.35);
+  }
+}
+
+.approved { color: $green !important; }
+.disapproved { color: $red !important; }
+
+.actived {
+  font-size: $font-size-base;
+  color: $blue !important;
+}
+
+.hide ,
+.is-hidden { display: none !important; }
+.is-visible { display: block !important; }
+.no-scroll { overflow-y: hidden !important; }
+.invisible { opacity: 0; }
+
+.not-clickable {
+  // pointer-events: none;
+  cursor: default;
+  box-shadow: none !important;
+}

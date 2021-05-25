@@ -4,7 +4,7 @@
  *
  * Sets up the theme, which are used in the theme.
  *
- * @package Wordpress Kickstart
+ * @package Festival de Verão
  */
 
 $theme = wp_get_theme();

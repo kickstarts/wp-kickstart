@@ -2,15 +2,15 @@
 
 ## Index
 
-- [Intro](#intro)
-- [Stack](#stack)
-- [Getting Started](#getting-started)
+- [Introdução](#intro)
+- [Requerimentos](#stack)
+- [Iniciando](#getting-started)
 
-## [Intro](#intro)
+## [Introdução](#intro)
 
 Este documento contém todas as informações necessárias para a inicialização do ambiente de desenvolvimento do projeto Puranatus.
 
-## Stack(#stack)
+## Requerimentos(#stack)
 
 - [PHP](https://www.php.net)
 - [MariaDB](https://mariadb.org)
@@ -19,19 +19,19 @@ Este documento contém todas as informações necessárias para a inicializaçã
 - [Let's Encrypt](https://letsencrypt.org)
 - [Gulp](https://gulpjs.com)
 
-### [Getting Started](#getting-started)
+### [Iniciando](#getting-started)
 
-**First use**
+**Primeiro uso**
 
-1. Execute `cp .env_exmaple .env` to create the `.env` dotfile from `.env_example` and set the environment for this project.
+1. Execute `cp .env.example .env` para criar um arquivo`.env` a partir do arquivo `.env.example` e defina as variáveis de ambiente para o seu projeto.
 
-**Start the project**
+**Iniciando o container**
 
-1. Execute `bash ./start` to create docker containers and volumes.
-2. Open the browser at [http://127.0.0.1](http://127.0.0.1)
-3. Profit!
+1. Execute `bash ./start` para criar os containers e volumes.
+2. Abra o seu navegador preferido no endereço: [http://127.0.0.1](http://127.0.0.1)
+3. Feito!
 
-**Stop the project**
+**Finalizando o container**
 
-1. Execute `bash ./stop` to stop all Dcoker services and remove containers and others relateds files.
-2. Profit!
+1. Execute `bash ./stop` para finalizar os containers do Docker.
+2. Feito!

@@ -2,7 +2,7 @@
 /**
  * The default template for displaying posts.
  *
- * @package Wordpress Kickstart
+ * @package Festival de Verão
  */
 
 get_header();

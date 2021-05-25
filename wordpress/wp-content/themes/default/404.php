@@ -2,7 +2,7 @@
 /**
  * The default template for displaying 404 error.
  *
- * @package Wordpress Kickstart
+ * @package Festival de Verão
  */
 
 get_header();

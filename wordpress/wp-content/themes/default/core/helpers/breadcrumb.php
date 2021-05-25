@@ -2,7 +2,7 @@
 /**
  * Breadcrumbs
  */
-function wp_kickstart_breadcrumbs( $homepage = '' ) {
+function fv_breadcrumbs( $homepage = '' ) {
   global $wp_query, $post, $author;
 
   ! empty( $homepage ) || $homepage = 'Página inicial';

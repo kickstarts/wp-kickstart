@@ -2,5 +2,5 @@
 /**
  * Taxonomy definitions
  *
- * @package Wordpress Kickstart
+ * @package Festival de Verão
  */

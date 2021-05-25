@@ -3,7 +3,7 @@
 /**
  * SEO utils
  */
-function wp_kickstart_seo_utils() {
+function fv_seo_utils() {
 
   /**
    * SEO variables definitions
@@ -59,10 +59,10 @@ function wp_kickstart_seo_utils() {
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@wp_kickstart">
+  <meta name="twitter:site" content="@fv">
   <meta name="twitter:title" content="<?=$title_default?>">
   <meta name="twitter:description" content="<?=$desc_default?>">
-  <meta name="twitter:creator" content="@wp_kickstart">
+  <meta name="twitter:creator" content="@fv">
   <meta name="twitter:image" content="<?=$image_default?>">
 
   <!-- Facebook Open Graph -->

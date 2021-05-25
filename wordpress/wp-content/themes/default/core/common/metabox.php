@@ -3,7 +3,7 @@
 /**
  * about page metaboxes config
  */
-function wp_kickstart_about_metaboxes() {
+function fv_about_metaboxes() {
   $about = null;
   if ( !empty($_GET['post']) || !empty($_POST['post_ID']) ) {
     if ( !empty($_GET['post']) ) {
@@ -101,7 +101,7 @@ function wp_kickstart_about_metaboxes() {
 /**
  * metaboxes definitions
  */
-function wp_kickstart_metaboxes() {
+function fv_metaboxes() {
 
   // startup list so we can make the select field
   $args = [
@@ -143,7 +143,7 @@ function wp_kickstart_metaboxes() {
     /**
      * Sobre
      */
-    wp_kickstart_about_metaboxes(),
+    fv_about_metaboxes(),
 
     /**
      * Slider
@@ -176,7 +176,7 @@ function wp_kickstart_metaboxes() {
           'label'             => 'Link do slider',
           'type'              => 'text',
           'attributes'        => [
-            'placeholder'  => 'http://wp_kickstart.com.br/noticias',
+            'placeholder'  => 'http://fv.com.br/noticias',
             'style'        => 'width: 100%'
           ]
         ]
@@ -664,4 +664,4 @@ function wp_kickstart_metaboxes() {
   }
 
 }
-add_action( 'init', 'wp_kickstart_metaboxes' );
+add_action( 'init', 'fv_metaboxes' );

@@ -4,7 +4,7 @@
  * ADMIN PANEL SETUP - Do not change anything here!
  * --------------------------------------------------------------
  *
- * @package Wordpress Kickstart
+ * @package Festival de Verão
  */
 
  if ( is_user_logged_in() && is_admin() ) {
@@ -18,7 +18,7 @@
 /**
  * Manage items from admin bar.
  */
-function wp_kickstart_admin_bar() {
+function fv_admin_bar() {
   global $wp_admin_bar;
 
   $wp_admin_bar->remove_menu('wp-logo');
@@ -71,49 +71,49 @@ function wp_kickstart_admin_bar() {
     ]
   );
 }
-add_action('wp_before_admin_bar_render', 'wp_kickstart_admin_bar');
+add_action('wp_before_admin_bar_render', 'fv_admin_bar');
 
 
 /**
  * Hide update notice of wordpress version.
  */
-function wp_kickstart_hide_msg() {
+function fv_hide_msg() {
   remove_action('admin_notices', 'update_nag', 3);
 }
-add_action('admin_menu','wp_kickstart_hide_msg');
+add_action('admin_menu','fv_hide_msg');
 
 
 /**
  * Hide "help" guide.
  */
-function wp_kickstart_hide_help() {
+function fv_hide_help() {
   echo '<style type="text/css">#contextual-help-link-wrap { display: none !important; }</style>';
 }
-add_action('admin_head', 'wp_kickstart_hide_help');
+add_action('admin_head', 'fv_hide_help');
 
 
 /**
  * Change the footer text
  */
-function wp_kickstart_remove_footer_admin() {
+function fv_remove_footer_admin() {
   echo "&copy;". date('Y') . ' - ' . get_bloginfo('name') . " - Todos os Direitos Reservados.";
 }
-add_filter('admin_footer_text', 'wp_kickstart_remove_footer_admin');
+add_filter('admin_footer_text', 'fv_remove_footer_admin');
 
 
 /**
  * Remove version from footer.
  */
-function wp_kickstart_change_footer_version() {
+function fv_change_footer_version() {
     return 'Orgulhosamente desenvolvido pela: <a href="http://www.republicainterativa.com.br" target="_blank" title="República Interativa">República Interativa</a>';
 }
-add_filter('update_footer', 'wp_kickstart_change_footer_version', 9999);
+add_filter('update_footer', 'fv_change_footer_version', 9999);
 
 
 /**
  * Remove meta boxes from posts.
  */
-function wp_kickstart_remove_meta_boxes() {
+function fv_remove_meta_boxes() {
   // Post format meta box
   remove_meta_box('formatdiv', 'post', 'normal');
   // Comments meta box
@@ -131,13 +131,13 @@ function wp_kickstart_remove_meta_boxes() {
   // Comment status meta box
   remove_meta_box('commentstatusdiv', 'post', 'normal');
 }
-add_action('admin_menu', 'wp_kickstart_remove_meta_boxes');
+add_action('admin_menu', 'fv_remove_meta_boxes');
 
 
 /**
  * Remove widgets dashboard.
  */
-function wp_kickstart_remove_widgets_admin() {
+function fv_remove_widgets_admin() {
   remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
   remove_meta_box('dashboard_activity', 'dashboard', 'normal');
   remove_meta_box('dashboard_recent_drafts', 'dashboard', 'side');
@@ -148,7 +148,7 @@ function wp_kickstart_remove_widgets_admin() {
   remove_meta_box('dashboard_primary', 'dashboard', 'side');
   remove_meta_box('dashboard_secondary', 'dashboard', 'side');
 }
-add_action('wp_dashboard_setup', 'wp_kickstart_remove_widgets_admin');
+add_action('wp_dashboard_setup', 'fv_remove_widgets_admin');
 
 
 /**
@@ -165,7 +165,7 @@ add_filter('use_block_editor_for_post_type', '__return_false', 10);
 /**
  * Set the color based on post status.
  */
-function wp_kickstart_posts_status_color() { ?>
+function fv_posts_status_color() { ?>
   <style>
     .status-draft   { background: #FCE3F2 !important; }
     .status-pending { background: #CBDFF2 !important; }
@@ -175,13 +175,13 @@ function wp_kickstart_posts_status_color() { ?>
     .status-trash   { background: #F2D46F !important; }
   </style> <?php
 }
-add_action('admin_footer', 'wp_kickstart_posts_status_color');
+add_action('admin_footer', 'fv_posts_status_color');
 
 
 /**
  * Remove tabs from menu.
  */
-function wp_kickstart_remove_menus() {
+function fv_remove_menus() {
   global $menu;
   global $current_user;
 
@@ -217,35 +217,35 @@ function wp_kickstart_remove_menus() {
     }
   }
 }
-add_action('admin_menu', 'wp_kickstart_remove_menus');
+add_action('admin_menu', 'fv_remove_menus');
 
 
 /**
  * Hide "Options" tab from admin.
  */
-function wp_kickstart_remove_screen_options_tab() {
+function fv_remove_screen_options_tab() {
   return false;
 }
-add_filter('screen_options_show_screen', 'wp_kickstart_remove_screen_options_tab');
+add_filter('screen_options_show_screen', 'fv_remove_screen_options_tab');
 
 
 /**
  * Remove items from user profile.
  */
-function wp_kickstart_change_contact_methods($contactmethods) {
+function fv_change_contact_methods($contactmethods) {
   unset($contactmethods['aim']);
   unset($contactmethods['yim']);
   unset($contactmethods['jabber']);
 
   return $contactmethods;
 }
-add_filter('user_contactmethods', 'wp_kickstart_change_contact_methods', 10, 1);
+add_filter('user_contactmethods', 'fv_change_contact_methods', 10, 1);
 
 
 /**
  * User opts cleaning
  */
-function wp_kickstart_remove_personal_options(){ ?>
+function fv_remove_personal_options(){ ?>
   <script type="text/javascript">
     jQuery(document).ready(function($) {
       $('form#your-profile > h2:first').remove();
@@ -257,7 +257,7 @@ function wp_kickstart_remove_personal_options(){ ?>
     });
   </script> <?php
 }
-add_action('admin_head','wp_kickstart_remove_personal_options');
+add_action('admin_head','fv_remove_personal_options');
 
 
 /**
@@ -276,16 +276,16 @@ remove_action('welcome_panel', 'wp_welcome_panel');
 /**
  * Dashboard Setup Panel
  */
-function wp_kickstart_dashboard_widgets() {
+function fv_dashboard_widgets() {
   global $wp_meta_boxes;
   wp_add_dashboard_widget(
     'custom_help_widget',
-    'Bem vindo ao painel da República Interativa', 'wp_kickstart_dashboard_help'
+    'Bem vindo ao painel da República Interativa', 'fv_dashboard_help'
   );
 }
-add_action('wp_dashboard_setup', 'wp_kickstart_dashboard_widgets');
+add_action('wp_dashboard_setup', 'fv_dashboard_widgets');
 
 // Callback for the previous action
-function wp_kickstart_dashboard_help() {
+function fv_dashboard_help() {
   echo '<p>Aqui você poderá gerenciar todo o conteúdo do site.</p><p>Qualquer dúvida, entre em contato através do email requipe@republicainterativa.com</p><p>Este site é mantido com a tecnologia do sistema WordPress e foi desenvolvido pela <a href="http://www.republicainterativa.com.br" target="_blank">República Interativa</a></p>';
 }

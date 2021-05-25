@@ -3,4 +3,4 @@ node_modules/
 mysql/
 _mysql/
 logs/
-!.env_example
+!.env.example

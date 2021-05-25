@@ -1,0 +1,31 @@
+config:
+  target: "https://vibes.vc"
+  phases:
+    - duration: 60
+      arrivalRate: 5
+      name: "The kick start"
+    - duration: 120
+      arrivalRate: 5
+      rampTo: 50
+      name: "Warm up the application"
+    - duration: 600
+      arrivalRate: 50
+      name: "Sustained max load"
+
+scenarios:
+  - name: "Home Page and Categories"
+    flow:
+      - get:
+          url: "/cinema/"
+      - get:
+          url: "/musica/"
+      - get:
+          url: "/eventos/"
+  - name: "Searhing for an event"
+    flow:
+      - get:
+          url: "/eventos/danniel-vieira-tbtdoamor/"
+      - get:
+          url: "/eventos/?d=20190828"
+          
+          

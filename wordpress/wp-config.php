@@ -2,7 +2,7 @@
 /**
  * @link https://codex.wordpress.org/pt-br:Editando_wp-config.php
  *
- * @package Wordpress Kickstart
+ * @package Festival de Verão
  */
 
 // ** MySQL settings - You can get this info from your web host ** //

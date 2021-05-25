@@ -2,7 +2,7 @@
 /**
  * The Footer for our theme.
  *
- * @package Wordpress Kickstart
+ * @package Festival de Verão
  */
 ?>
 

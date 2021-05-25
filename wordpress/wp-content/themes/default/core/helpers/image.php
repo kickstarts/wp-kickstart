@@ -10,7 +10,7 @@
  *
  * @return string
  */
-function wp_kickstart_get_image_url( $id, $width, $height, $crop = true, $upscale = false ) {
+function fv_get_image_url( $id, $width, $height, $crop = true, $upscale = false ) {
 	$resizer    = Odin_Thumbnail_Resizer::get_instance();
 	$origin_url = wp_get_attachment_url( $id );
 	$url        = $resizer->process( $origin_url, $width, $height, $crop, $upscale );
@@ -37,7 +37,7 @@ function wp_kickstart_get_image_url( $id, $width, $height, $crop = true, $upscal
  *
  * @return string         Return the post thumbnail.
  */
-function wp_kickstart_thumbnail( $width, $height, $alt, $crop = true, $class = '', $upscale = false ) {
+function fv_thumbnail( $width, $height, $alt, $crop = true, $class = '', $upscale = false ) {
 	if ( ! class_exists( 'Odin_Thumbnail_Resizer' ) ) {
 		return;
 	}
@@ -45,7 +45,7 @@ function wp_kickstart_thumbnail( $width, $height, $alt, $crop = true, $class = '
 	$thumb = get_post_thumbnail_id();
 
 	if ( $thumb ) {
-		$image = wp_kickstart_get_image_url( $thumb, $width, $height, $crop, $upscale );
+		$image = fv_get_image_url( $thumb, $width, $height, $crop, $upscale );
 		$html  = '<img class="wp-image-thumb img-responsive ' . esc_attr( $class ) . '" src="' . esc_url( $image ) . ' alt="' . esc_attr( $alt ) . '" />';
 
 		return apply_filters( 'odin_thumbnail_html', $html );

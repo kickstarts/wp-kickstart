@@ -2,7 +2,7 @@
 /**
  * The default template for displaying categories.
  *
- * @package Wordpress Kickstart
+ * @package Festival de Verão
  */
 
 get_header();

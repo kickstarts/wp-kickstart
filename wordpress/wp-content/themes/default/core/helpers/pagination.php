@@ -3,7 +3,7 @@
 /**
  * Pagination
  */
-function wp_kickstart_pagination( \WP_Query $wp_query = null, $echo = true ) {
+function fv_pagination( \WP_Query $wp_query = null, $echo = true ) {
 	if ( null === $wp_query ) {
 		global $wp_query;
 	}

@@ -1,6 +1,6 @@
 <?php
 
-function wp_kickstart_general_opts() {
+function fv_general_opts() {
 
   /**
    * @ID títles
@@ -89,4 +89,4 @@ function wp_kickstart_general_opts() {
   $settings->set_fields( $content );
 
 }
-add_action( 'init', 'wp_kickstart_general_opts', 1 );
+add_action( 'init', 'fv_general_opts', 1 );

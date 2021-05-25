@@ -4,12 +4,12 @@
  * THEME SUPPORT SETUP - Do not change anything here!
  * --------------------------------------------------------------
  *
- * @package Wordpress Kickstart
+ * @package Festival de Verão
  */
 
- if (!function_exists('wp_kickstart_after_setup_theme_handler')) {
+ if (!function_exists('fv_after_setup_theme_handler')) {
 
-  function wp_kickstart_after_setup_theme_handler() {
+  function fv_after_setup_theme_handler() {
 
 
     /**
@@ -94,12 +94,12 @@
   }
 
 }
-add_action('after_setup_theme', 'wp_kickstart_after_setup_theme_handler');
+add_action('after_setup_theme', 'fv_after_setup_theme_handler');
 
 /*
  * Disables WordPress Rest API for external requests
  */
-function wp_kickstart_disable_rest_api() {
+function fv_disable_rest_api() {
   die('REST API is disabled.');
 }
-// add_action( 'rest_api_init', 'wp_kickstart_disable_rest_api', 1 );
+// add_action( 'rest_api_init', 'fv_disable_rest_api', 1 );

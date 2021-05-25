@@ -2,13 +2,13 @@
 /**
  * CPT definitions
  *
- * @package Wordpress Kickstart
+ * @package Festival de Verão
  */
 
 /*
  * Initialize Custom Post Types
  */
-function wp_kickstart_init_cpts() {
+function fv_init_cpts() {
 
   $cpts = [
     [
@@ -87,4 +87,4 @@ function wp_kickstart_init_cpts() {
     }
   }
 }
-add_action( 'init', 'wp_kickstart_init_cpts' );
+add_action( 'init', 'fv_init_cpts' );

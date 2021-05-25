@@ -4,7 +4,7 @@
    *
    * Displays all of the <head> section and everything up till .main div
    *
-   * @package Wordpress Kickstart
+   * @package Festival de Verão
    */ ?>
 <!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?> <?php theme_html_tag_schema(); ?>>
@@ -27,10 +27,10 @@
   <meta name="apple-mobile-web-app-title" content="<?php get_bloginfo('name'); ?>">
 
   <!-- SEO -->
-  <?php wp_kickstart_seo_utils(); ?>
+  <?php fv_seo_utils(); ?>
 
   <!-- Icons -->
-  <?php wp_kickstart_favicons(); ?>
+  <?php fv_favicons(); ?>
 
   <link type="text/plain" rel="author" href="<?php WP_THEME_URL?>/humans.txt">
   <link rel="profile" href="http://gmpg.org/xfn/11" />

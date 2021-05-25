@@ -8,8 +8,8 @@
 // using some Api Key. Google Maps will not load since user provides
 // some key (it is required for every request).
 
-function wp_kickstart_gmaps_admin( $api ) {
+function fv_gmaps_admin( $api ) {
 	$api['key'] = GOOGLE_API_KEY;
 	return $api;
 }
-// add_filter('acf/fields/google_map/api', 'wp_kickstart_gmaps_admin');
+// add_filter('acf/fields/google_map/api', 'fv_gmaps_admin');

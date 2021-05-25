@@ -2,7 +2,7 @@
 /**
  * Icons for the header
  */
-function wp_kickstart_favicons() {
+function fv_favicons() {
 
   /* if ( wp_is_mobile() ) { ?>
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?=WP_ICON_URL?>/apple-touch-icon-57x57.png" />

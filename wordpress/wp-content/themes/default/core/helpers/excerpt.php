@@ -3,7 +3,7 @@
 /**
  * Excerpt Limit
  */
-function wp_kickstart_excerpt_limit( $type = 'excerpt', $limit = 40 ) {
+function fv_excerpt_limit( $type = 'excerpt', $limit = 40 ) {
 	$limit = (int) $limit;
 
 	switch ( $type ) {

@@ -2,7 +2,7 @@
 /**
  * The default template for the news sidebar
  *
- * @package Wordpress Kickstart
+ * @package Festival de Verão
  */
 
 get_header();

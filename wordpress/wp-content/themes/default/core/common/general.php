@@ -9,13 +9,13 @@
  * For more information on hooks, actions, and filters,
  * see http://codex.wordpress.org/Plugin_API
  *
- * @package Wordpress Kickstart
+ * @package Festival de Verão
  */
 
  /**
   * Load async scripts
   */
-function wp_kickstart_async_scripts($url) {
+function fv_async_scripts($url) {
   if ( strpos( $url, '#asyncload') === false )
     return $url;
   else if ( is_admin() )
@@ -23,13 +23,13 @@ function wp_kickstart_async_scripts($url) {
   else
     return str_replace( '#asyncload', '', $url )."' async='async";
 }
-add_filter( 'clean_url', 'wp_kickstart_async_scripts', 11, 1 );
+add_filter( 'clean_url', 'fv_async_scripts', 11, 1 );
 
 
 /**
  * Load Scripts.
  */
-function wp_kickstart_enqueue_scripts() {
+function fv_enqueue_scripts() {
 
   // WP theme css
   wp_enqueue_style('activation-css', get_stylesheet_uri(), [], null, 'all');
@@ -70,23 +70,23 @@ function wp_kickstart_enqueue_scripts() {
     wp_enqueue_script( 'comment-reply' );
   }
 }
-add_action('wp_enqueue_scripts', 'wp_kickstart_enqueue_scripts', 1);
+add_action('wp_enqueue_scripts', 'fv_enqueue_scripts', 1);
 
 
 /**
  * Load admin stuff
  */
-function wp_kickstart_custom_wp_admin_style() {
+function fv_custom_wp_admin_style() {
   wp_register_style( 'custom_wp_admin_css', WP_STYLE_URL . '/admin.min.css?vrs='.filemtime(get_template_directory().'/assets/styles/admin.min.css'), false, '1.0.0' );
   wp_enqueue_style( 'custom_wp_admin_css' );
 }
-add_action( 'admin_enqueue_scripts', 'wp_kickstart_custom_wp_admin_style' );
+add_action( 'admin_enqueue_scripts', 'fv_custom_wp_admin_style' );
 
 
 /**
  * Flush Rewrite Rules for new CPTs and Taxonomies.
  */
-function wp_kickstart_flush_rewrite() {
+function fv_flush_rewrite() {
   flush_rewrite_rules();
 }
-add_action('after_switch_theme', 'wp_kickstart_flush_rewrite');
+add_action('after_switch_theme', 'fv_flush_rewrite');

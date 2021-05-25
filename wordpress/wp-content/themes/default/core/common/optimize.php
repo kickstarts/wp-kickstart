@@ -2,14 +2,14 @@
 /**
  * Optimization Functions and definitions
  *
- * @package Wordpress Kickstart
+ * @package Festival de Verão
  */
 
 
 /**
  * Generates the title of the site optimized for SEO.
  */
-function wp_kickstart_seo_wp_title( $title, $sep ) {
+function fv_seo_wp_title( $title, $sep ) {
   global $page, $paged;
 
   if ( is_feed() ) {
@@ -32,13 +32,13 @@ function wp_kickstart_seo_wp_title( $title, $sep ) {
 
   return $title;
 }
-add_filter( 'wp_title', 'wp_kickstart_seo_wp_title', 10, 2 );
+add_filter( 'wp_title', 'fv_seo_wp_title', 10, 2 );
 
 
 /**
  * Cleanup wp_head().
  */
-function wp_kickstart_head_cleanup() {
+function fv_head_cleanup() {
   // category feeds.
   remove_action( 'wp_head', 'feed_links_extra', 3 );
   // post and comment feeds.
@@ -67,7 +67,7 @@ function wp_kickstart_head_cleanup() {
   remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
   remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 }
-add_action( 'init', 'wp_kickstart_head_cleanup' );
+add_action( 'init', 'fv_head_cleanup' );
 
 
 /**
@@ -85,24 +85,24 @@ add_filter( 'use_default_gallery_style', '__return_false' );
 /**
  * Add rel="nofollow" and remove rel="category".
  */
-function wp_kickstart_modify_category_rel( $text ) {
+function fv_modify_category_rel( $text ) {
   $search = array( 'rel="category"', 'rel="category tag"' );
   $text = str_replace( $search, 'rel="nofollow"', $text );
 
   return $text;
 }
-add_filter( 'wp_list_categories', 'wp_kickstart_modify_category_rel' );
-add_filter( 'the_category', 'wp_kickstart_modify_category_rel' );
+add_filter( 'wp_list_categories', 'fv_modify_category_rel' );
+add_filter( 'the_category', 'fv_modify_category_rel' );
 
 
 /**
  * Add rel="nofollow" and remove rel="tag".
  */
-function wp_kickstart_modify_tag_rel( $taglink ) {
+function fv_modify_tag_rel( $taglink ) {
   return str_replace( 'rel="tag">', 'rel="nofollow">', $taglink );
 }
-add_filter( 'wp_tag_cloud', 'wp_kickstart_modify_tag_rel' );
-add_filter( 'the_tags', 'wp_kickstart_modify_tag_rel' );
+add_filter( 'wp_tag_cloud', 'fv_modify_tag_rel' );
+add_filter( 'the_tags', 'fv_modify_tag_rel' );
 
 
 /**
@@ -119,11 +119,11 @@ show_admin_bar(false);
 /**
  * Remove default image sizes here
  */
-function wp_kickstart_remove_default_images( $sizes ) {
+function fv_remove_default_images( $sizes ) {
   unset( $sizes['small']);
   unset( $sizes['medium']);
   unset( $sizes['large']);
   unset( $sizes['medium_large']);
   return $sizes;
 }
-add_filter( 'intermediate_image_sizes_advanced', 'wp_kickstart_remove_default_images' );
+add_filter( 'intermediate_image_sizes_advanced', 'fv_remove_default_images' );
